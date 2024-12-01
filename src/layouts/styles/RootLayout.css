@@ -1,0 +1,16 @@
+.nav-link-item {
+  margin-inline-end: 2rem;
+}
+
+.logout-btn {
+  font-weight: 500;
+  color: #646cff;
+  background-color: transparent;
+  margin-inline-start: 0;
+  padding: 0;
+  border: none;
+}
+
+.cart-link {
+  margin-inline-start: 2rem;
+}
