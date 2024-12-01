@@ -24,6 +24,7 @@ import OrderDetails, { orderDataLoader } from './pages/order/OrderDetails';
 import AllOrders, { ordersLoader } from './pages/order/AllOrders';
 import UserProfile from './pages/UserProfile';
 import AccountLayout from './layouts/AccountLayout';
+import SignUp from './pages/SignUp';
 
 function App() {
   const router = createBrowserRouter(
@@ -47,6 +48,7 @@ function App() {
           <Route path='contact-us' element={<ContactUs />} />
         </Route>
         <Route path='login' element={<Login />}/>
+        <Route path='signup' element={<SignUp />} />
         <Route path='myaccount' element={
           <ProtectedRoute>
             <AccountLayout />

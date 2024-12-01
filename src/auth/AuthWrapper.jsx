@@ -4,21 +4,29 @@ export const AuthContext = createContext();
 
 const AuthWrapper = ({ children }) => {
   const [ user, setUser ] = useState({
-    name: '',
+    email: '',
+    username: '',
+    address: '',
     isAuthenticated: false
   });
 
   const login = (username, password) => {
     return new Promise((resolve, reject) => {
       if (password === 'password'){
-        setUser({
-          name: username,
-          isAuthenticated: true
-        });
-        resolve('Success');
+        fetch(`http://localhost:8000/users?username=${username}`)
+          .then((response) => response.json())
+          .then((user) => {
+            setUser({
+              ...user[0],
+              isAuthenticated: true
+            });
+            resolve('Success');
+          })
       } else {
         setUser({
-          name: '',
+          email: '',
+          username: '',
+          address: '',
           isAuthenticated: false
         });
         reject('Incorrect password!');
@@ -28,7 +36,9 @@ const AuthWrapper = ({ children }) => {
 
   const logout = () => {
     setUser({
-      name: '',
+      email: '',
+      username: '',
+      address: '',
       isAuthenticated: false
     });
   };

@@ -7,7 +7,7 @@ const AllOrders = () => {
     <>
       <h2>Your orders history</h2>
       {orders.map((order) => (
-        <div>
+        <div key={order.id}>
           <h3>Order ID: {order.id}</h3>
           <p>Order placed: {order.orderDate}</p>
           <p>Products</p>
