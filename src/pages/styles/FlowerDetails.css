@@ -1,0 +1,35 @@
+.flower-page-container {
+  display: grid;
+  flex-direction: row;
+  grid-template-rows: 1fr;
+  grid-template-columns: 0.5fr 1fr;
+  gap: 2rem;
+}
+
+.add-to-cart {
+  background-color: green;
+  color: white;
+  border: transparent;
+  margin-block-start: 2rem;
+}
+
+.flower-page-image {
+  grid-column-start: 1;
+}
+
+.flower-page-info {
+  grid-column-start: 2;
+  text-align: left;
+  margin-inline-start: 2rem;
+}
+
+@media (max-width: 768px) {
+  .flower-page-container {
+    grid-template-columns: 1fr;
+  }
+
+  .flower-page-info {
+    text-align: center;
+    grid-column-start: 1;
+  }
+}
