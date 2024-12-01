@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { CartContext } from '../layouts/RootLayout';
 import './styles/FlowerDetails.css';
 
@@ -7,6 +7,7 @@ const FlowerDetails = () => {
   const [ selectedQuantity, setSelectedQuantity ]= useState(0);
   const { cartProducts, addToCart, removeFromCart } = useContext(CartContext);
   const flower = useLoaderData();
+  const navigate = useNavigate('/shop');
   const handleClick = () => {
     if (selectedQuantity > 0) {
       addToCart({
@@ -44,6 +45,14 @@ const FlowerDetails = () => {
           <button
             className='add-to-cart'
             onClick={handleClick}>Add to cart</button>
+        </div>
+        <br />
+        <div>
+          <button
+            className='go-to-shop'
+            onClick={() => 
+              navigate('/shop')
+            }>Add more items</button>
         </div>
       </div>
     </div>

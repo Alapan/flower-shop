@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../auth/AuthWrapper';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoginInvalid, setIsLoginInvalid] = useState(false);
+  const [ username, setUsername ] = useState('');
+  const [ password, setPassword ] = useState('');
+  const [ isLoginInvalid, setIsLoginInvalid ] = useState(false);
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -21,17 +21,26 @@ const Login = () => {
 
   return (
     <>
+      <h2>Log in to your account</h2>
+      <p>
+        New user? <NavLink to='/signup'>Sign up.</NavLink>
+      </p>
       <form onSubmit={handleSubmit}>
-        <label>Username: </label>
-        <input
-          type='text'
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label>Password: </label>
-        <input
-          type='password'
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div>
+          <label>Username: </label>
+          <input
+            type='text'
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label>Password: </label>
+          <input
+            type='password'
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
         <button type='submit'>Login</button>
       </form>
       {isLoginInvalid ? <p>Invalid login. Please try again</p> : null}

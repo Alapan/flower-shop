@@ -17,7 +17,7 @@ const CurrentOrder = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        username: user.name,
+        username: user.username,
         products: cartProducts,
         totalPrice: getTotalPrice(cartProducts),
         orderDate: new Date().toISOString()

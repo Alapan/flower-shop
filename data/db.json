@@ -1,4 +1,12 @@
 {
+  "users": [
+    {
+      "id": "f192",
+      "username": "alapan",
+      "email": "alapan@gmail.com",
+      "address": "34 Wishart Archway, Dundee, DD1 2JA"
+    }
+  ],
   "flowers": [
     {
       "id": "1",
@@ -98,6 +106,32 @@
       ],
       "totalPrice": "£125.97",
       "orderDate": "2024-12-01T02:58:55.069Z"
+    },
+    {
+      "id": "9cc4",
+      "username": "alapan",
+      "products": [
+        {
+          "id": "2",
+          "name": "12 Red Roses",
+          "description": "12 beautiful Freedom red Roses. The Valentines favourite.",
+          "image": "/12-red-roses.jpg",
+          "price": "£37.99",
+          "selectedQuantity": "2",
+          "totalPriceForItem": "£75.98"
+        },
+        {
+          "id": "4",
+          "name": "Sunflowers and Red Roses",
+          "description": "A beautiful Autumn bouquet  Delivered in a gift bag. Vase or Jug can be added as an add on.",
+          "image": "/sunflowers-and-roses.jpg",
+          "price": "£43.99",
+          "selectedQuantity": "1",
+          "totalPriceForItem": "£43.99"
+        }
+      ],
+      "totalPrice": "£119.97",
+      "orderDate": "2024-12-01T10:20:14.030Z"
     }
   ]
 }
