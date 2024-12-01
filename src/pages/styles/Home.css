@@ -1,0 +1,30 @@
+.homepage {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-gap: 4rem;
+  margin-block-start: 4rem;
+}
+
+.homepage-image {
+  grid-column-start: 1;
+}
+
+.homepage-text {
+  grid-column-start: 2;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .homepage {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage-text {
+    grid-column-start: 1;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+}
