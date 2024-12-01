@@ -1,0 +1,103 @@
+{
+  "flowers": [
+    {
+      "id": "1",
+      "name": "White blossom",
+      "description": "A mixture of white flowers",
+      "image": "/white-blossom.webp",
+      "price": "£49.99"
+    },
+    {
+      "id": "2",
+      "name": "12 Red Roses",
+      "description": "12 beautiful Freedom red Roses. The Valentines favourite.",
+      "image": "/12-red-roses.jpg",
+      "price": "£37.99"
+    },
+    {
+      "id": "3",
+      "name": "The Ajambo",
+      "description": "Like a firework that lights up the sky, Ajambo is glowing with rich oranges, deep pinks and plump purples.",
+      "image": "/ajambo.webp",
+      "price": "£52.99"
+    },
+    {
+      "id": "4",
+      "name": "Sunflowers and Red Roses",
+      "description": "A beautiful Autumn bouquet  Delivered in a gift bag. Vase or Jug can be added as an add on.",
+      "image": "/sunflowers-and-roses.jpg",
+      "price": "£43.99"
+    }
+  ],
+  "orders": [
+    {
+      "id": "3867",
+      "username": "alapan",
+      "products": [
+        {
+          "id": "3",
+          "name": "The Ajambo",
+          "description": "Like a firework that lights up the sky, Ajambo is glowing with rich oranges, deep pinks and plump purples.",
+          "image": "/ajambo.webp",
+          "price": "£52.99",
+          "selectedQuantity": "1",
+          "totalPriceForItem": "£52.99"
+        }
+      ],
+      "totalPrice": "£52.99",
+      "orderDate": "2024-12-01T02:46:47.581Z"
+    },
+    {
+      "id": "bd2c",
+      "username": "alapan",
+      "products": [
+        {
+          "id": "1",
+          "name": "White blossom",
+          "description": "A mixture of white flowers",
+          "image": "/white-blossom.webp",
+          "price": "£49.99",
+          "selectedQuantity": "2",
+          "totalPriceForItem": "£99.98"
+        },
+        {
+          "id": "4",
+          "name": "Sunflowers and Red Roses",
+          "description": "A beautiful Autumn bouquet  Delivered in a gift bag. Vase or Jug can be added as an add on.",
+          "image": "/sunflowers-and-roses.jpg",
+          "price": "£43.99",
+          "selectedQuantity": "1",
+          "totalPriceForItem": "£43.99"
+        }
+      ],
+      "totalPrice": "£143.97",
+      "orderDate": "2024-12-01T02:51:40.696Z"
+    },
+    {
+      "id": "0b6a",
+      "username": "alapan",
+      "products": [
+        {
+          "id": "2",
+          "name": "12 Red Roses",
+          "description": "12 beautiful Freedom red Roses. The Valentines favourite.",
+          "image": "/12-red-roses.jpg",
+          "price": "£37.99",
+          "selectedQuantity": "2",
+          "totalPriceForItem": "£75.98"
+        },
+        {
+          "id": "1",
+          "name": "White blossom",
+          "description": "A mixture of white flowers",
+          "image": "/white-blossom.webp",
+          "price": "£49.99",
+          "selectedQuantity": "1",
+          "totalPriceForItem": "£49.99"
+        }
+      ],
+      "totalPrice": "£125.97",
+      "orderDate": "2024-12-01T02:58:55.069Z"
+    }
+  ]
+}
