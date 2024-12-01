@@ -1,0 +1,30 @@
+.flowers-grid {
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: 0.5fr 1fr;
+  gap: 2rem;
+}
+
+.flower-image {
+  grid-column-start: 1;
+}
+
+.flower-info {
+  grid-column-start: 2;
+  text-align: left;
+  color: black
+}
+
+.flower-name {
+  color: blue;
+}
+
+@media (max-width: 768px) {
+  .flowers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flower-info {
+    text-align: center;
+  }
+}
