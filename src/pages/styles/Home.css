@@ -1,30 +1,48 @@
 .homepage {
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  grid-gap: 4rem;
+  grid-template-columns: 1fr 0.5fr;
+  grid-gap: 2rem;
   margin-block-start: 4rem;
+  margin-inline: 4rem;
 }
 
 .homepage-image {
   grid-column-start: 1;
 }
 
-.homepage-text {
+.homepage-text-container {
   grid-column-start: 2;
   display: grid;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+}
+
+.homepage-button {
+  height: 3rem;
+  width: 12rem;
+  border-radius: 4px;
+  background-color: #559E54;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-button a {
+  color: white;
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
   .homepage {
     grid-template-columns: 1fr;
+    margin-inline: 0;
   }
 
-  .homepage-text {
+  .homepage-text-container {
     grid-column-start: 1;
     display: grid;
     justify-content: center;
     align-items: center;
+    margin-block-end: 2rem;
   }
 }
