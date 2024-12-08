@@ -8,6 +8,8 @@ export const CartContext = createContext();
 const RootLayout = () => {
   const { user, logout } = useContext(AuthContext);
   const [ cartProducts, setCartProducts ] = useState([]);
+  const [ currentTab, setCurrentTab ] = useState('/');
+  const [ cartLinkCls, setCartLinkCls ] = useState('nav-link-item')
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -26,29 +28,58 @@ const RootLayout = () => {
 
   const clearCart = () => setCartProducts([])
 
-  let cartLinkCls = 'nav-link-item';
-  if (user.isAuthenticated) cartLinkCls += ' cart-link';
+  const setNavLinkCls = (path) => {
+    if (user.isAuthenticated) setCartLinkCls((prev) => prev + ' cart-link');
+  
+    if (currentTab === window.location.path) {
+      setCartLinkCls((prev) => prev + ' active');
+    }
+  }
 
   return (
     <CartContext.Provider value={{
       cartProducts,
       addToCart,
       removeFromCart,
-      clearCart
+      clearCart,
+      setNavLinkCls
     }}>
-      <header>
-        <h1>Flowers for You</h1>
-        <nav>
-          <NavLink to='/' className='nav-link-item'>Home</NavLink>
-          <NavLink to='/shop' className='nav-link-item'>Shop</NavLink>
-          <NavLink to='/about' className='nav-link-item'>Info</NavLink>
+      <header className='header'>
+        <h1 className='site-heading'>Flowers for You</h1>
+        <nav className='navbar'>
+          <NavLink
+            to='/'
+            className={cartLinkCls}
+            onClick={() => setCurrentTab('')}
+          >Home</NavLink>
+          <NavLink
+            to='/shop'
+            className={cartLinkCls}
+            onClick={() => setCurrentTab('/shop')}
+          >Shop</NavLink>
+          <NavLink
+            to='/about'
+            className={cartLinkCls}
+            onClick={() => setCurrentTab('/about')}
+          >Info</NavLink>
           {
             user.isAuthenticated ? (
               <>
-                <NavLink to='/myaccount' className='nav-link-item'>Account</NavLink>
+                <NavLink
+                  to='/myaccount'
+                  className={cartLinkCls}
+                  onClick={() => setCurrentTab('/myaccount')}
+                >Account</NavLink>
                 <button onClick={handleLogout} className='logout-btn'>Logout</button>
               </>
-            ) : <NavLink to='/login' className='nav-link-item'>Login</NavLink>
+            ) : (
+              <NavLink
+                to='/login'
+                className={cartLinkCls}
+                onClick={() => setCurrentTab('/login')}
+                >Login
+              </NavLink>
+            )
           }
           <NavLink to='/cart' className={cartLinkCls}>
             Cart {cartProducts.length > 0 ? `(${cartProducts.length})` : null}

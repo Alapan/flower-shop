@@ -1,5 +1,16 @@
+.navbar {
+  padding-block-end: 1rem;
+  text-align: center;
+}
+
 .nav-link-item {
   margin-inline-end: 2rem;
+  color: white;
+  padding-block-end: 2rem;
+}
+
+.active {
+  color: black;
 }
 
 .logout-btn {
@@ -13,4 +24,27 @@
 
 .cart-link {
   margin-inline-start: 2rem;
+}
+
+.header {
+  background-color: #559E54;
+}
+
+.site-heading {
+  margin-block: 0;
+  padding-block: 2rem;
+  padding-inline-start: 0;
+  text-align: center;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    text-align: right;
+  }
+
+  .site-heading {
+    text-align: left;
+    padding-inline-start: 4rem;
+  }
 }
